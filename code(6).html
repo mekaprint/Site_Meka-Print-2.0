@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MEKA PRINT - Impression 3D personnalisée, prises de vue drone et réparation d'objets à Saint-Malo. Services maker innovants en Bretagne.">
+    <meta name="keywords" content="Impression 3D Saint-Malo, Services maker Saint-Malo, Drone prise de vue Saint-Malo, Réparation objets Saint-Malo, MEKA PRINT, Fabrication additive Bretagne, Création personnalisée Saint-Malo, Entreprise locale Saint-Malo, Services créatifs impression 3D">
+    <title>MEKA PRINT - Services créatifs à Saint-Malo</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .hero h1 {
+            color: white;
+            border-bottom: 3px solid white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            color: var(--accent);
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 150px;
+        }
+        
+        .form-message {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .contact-info {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .email-link {
+            color: var(--secondary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: var(--primary);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+        }
+        
+        /* Page transitions */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home')">MEKA<span>PRINT</span></a>
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Accueil</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('history')">Histoire</a></li>
+                <li><a href="#" onclick="showPage('order')">Commande</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page d'accueil -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1>MEKA PRINT</h1>
+                <p>Création et innovation à Saint-Malo</p>
+                <p>Services d'impression 3D, prises de vue par drone et réparation d'objets personnalisés</p>
+                <a href="#" class="btn" onclick="showPage('order')">Passer une commande</a>
+            </div>
+            
+            <div class="content">
+                <h2>Bienvenue chez MEKA PRINT</h2>
+                <p>Spécialistes en impression 3D et solutions créatives à Saint-Malo, nous mettons notre expertise à votre service pour concrétiser vos projets les plus ambitieux.</p>
+                <p>Que vous soyez un particulier cherchant à donner vie à une idée unique ou un professionnel nécessitant des solutions de fabrication additive, notre équipe passionnée est là pour vous accompagner.</p>
+                
+                <div class="contact-info">
+                    <p>Contactez-nous directement par email :</p>
+                    <a href="mailto:mekaprint.bzh@gmail.com" class="email-link">mekaprint.bzh@gmail.com</a>
+                </div>
+                
+                <p>Découvrez nos services et notre histoire pour comprendre ce qui fait de MEKA PRINT un acteur incontournable du paysage maker breton.</p>
+                
+                <div style="margin: 2rem 0; text-align: center;">
+                    <p><em>"Un formulaire vous sera envoyé dès la réception de ce message."</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page des services -->
+        <section id="services" class="page">
+            <h1>Nos Services</h1>
+            <p>Découvrez l'étendue de nos compétences et choisissez le service qui correspond à vos besoins.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Impression 3D personnalisée</h3>
+                    <p>Réalisation de pièces uniques sur mesure avec nos imprimantes 3D haute précision. Prototypes, pièces de rechange ou créations artistiques, nous matérialisons vos idées.</p>
+                    <p>Technologies disponibles : FDM, SLA, SLS</p>
+                    <p>Matériaux : PLA, ABS, résine, nylon et plus</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Prises de vues avec drone</h3>
+                    <p>Captations aériennes professionnelles pour vos projets immobiliers, événements ou besoins promotionnels. Images et vidéos haute résolution avec drones certifiés.</p>
+                    <p>Services associés : montage vidéo, photos panoramiques 360°, modélisation 3D à partir de prises de vue</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Réparation d'objets</h3>
+                    <p>Redonnez une seconde vie à vos objets endommagés grâce à nos solutions de réparation innovantes. Combinaison de techniques traditionnelles et d'impression 3D pour des résultats durables.</p>
+                    <p>Nous réparons : objets en plastique, pièces mécaniques, éléments décoratifs et plus</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <p>Pour toute question sur nos services :</p>
+                <a href="mailto:mekaprint.bzh@gmail.com" class="email-link">mekaprint.bzh@gmail.com</a>
+            </div>
+        </section>
+
+        <!-- Page histoire -->
+        <section id="history" class="page">
+            <h1>Notre Histoire</h1>
+            <p>Découvrez les origines de MEKA PRINT et les valeurs qui guident notre entreprise.</p>
+            
+            <h2>Nos débuts</h2>
+            <p>Tout a commencé en 2018 dans un petit atelier à Saint-Malo, où notre fondateur, passionné par le mouvement maker et les technologies émergentes, a commencé à expérimenter avec sa première imprimante 3D artisanale.</p>
+            
+            <h2>Notre évolution</h2>
+            <p>De cette passion est née MEKA PRINT, qui a rapidement évolué pour proposer des services professionnels d'impression 3D à la communauté locale. Face à la demande, nous avons diversifié nos services pour inclure les prises de vue par drone et la réparation d'objets, toujours avec cette même philosophie de création et d'innovation.</p>
+            
+            <h2>Notre philosophie</h2>
+            <p>Chez MEKA PRINT, nous croyons que la technologie doit servir la créativité. Notre mission est d'apporter des solutions innovantes aux défis quotidiens, en combinant savoir-faire artisanal et techniques de pointe.</p>
+            
+            <p>Basés à Saint-Malo, nous sommes fiers de contribuer à l'écosystème économique et créatif de la région Bretagne, en collaborant avec des artisans, des artistes et des entreprises locales.</p>
+            
+            <div class="contact-info">
+                <p>Pour en savoir plus sur notre histoire :</p>
+                <a href="mailto:mekaprint.bzh@gmail.com" class="email-link">mekaprint.bzh@gmail.com</a>
+            </div>
+        </section>
+
+        <!-- Page commande -->
+        <section id="order" class="page">
+            <h1>Passer une commande</h1>
+            <p>Remplissez ce formulaire pour nous faire part de votre projet ou demande. Nous vous contacterons rapidement pour discuter des détails.</p>
+            
+            <div class="contact-info">
+                <p>Vous pouvez aussi nous contacter directement par email :</p>
+                <a href="mailto:mekaprint.bzh@gmail.com" class="email-link">mekaprint.bzh@gmail.com</a>
+            </div>
+            
+            <div id="form-message" class="form-message" style="display: none;"></div>
+            
+            <form id="order-form" action="https://formspree.io/f/mekaprint.bzh@gmail.com" method="POST">
+                <div class="form-group">
+                    <label for="lastname">Nom *</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstname">Prénom *</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Détails de votre demande *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Envoyer la demande</button>
+            </form>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <p><em>"Un formulaire vous sera envoyé dès la réception de ce message."</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://youtube.com/Meka_Print" target="_blank">YouTube</a>
+            <a href="https://instagram.com/mekaprint.bzh" target="_blank">Instagram</a>
+            <a href="mailto:mekaprint.bzh@gmail.com">Email</a>
+        </div>
+        <p>Contact : <a href="mailto:mekaprint.bzh@gmail.com" style="color: white;">mekaprint.bzh@gmail.com</a></p>
+        <p>&copy; 2023 MEKA PRINT - Tous droits réservés</p>
+        <p>Saint-Malo, Bretagne</p>
+        <p><small>Site réalisé avec passion par MEKA PRINT</small></p>
+    </footer>
+
+    <script>
+        // Navigation entre les pages
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Afficher la page sélectionnée
+            document.getElementById(pageId).classList.add('active');
+            
+            // Fermer le menu mobile si ouvert
+            document.querySelector('.nav-links').classList.remove('active');
+            
+            // Scroll vers le haut
+            window.scrollTo(0, 0);
+        }
+        
+        // Menu mobile
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+        
+        // Gestion du formulaire
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Envoi via Formspree
+            fetch(this.action, {
+                method: this.method
